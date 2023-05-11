@@ -34,8 +34,8 @@ const caesarModule = (function () {
   };
 })();
 
-var inputString = "Hello World!";
-var shiftAmount = -26;
+var inputString = "Zebra";
+var shiftAmount = 3;
 
 var shiftedString = caesarModule.caesar(inputString, shiftAmount);
 console.log(shiftedString);

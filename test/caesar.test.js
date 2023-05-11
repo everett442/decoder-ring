@@ -2,28 +2,53 @@
 const { expect } = require("chai");
 const { caesar } = require("../src/caesar");
 
-describe("caesar", () => {
+describe("function caesar()", () => {
   it("checks for caesar() function", () => {
     expect(caesar).to.be.a("function");
   });
-  it("returns false if shift is 0 or grater than 25", () => {
-    expect(caesar("Hello World", 0)).to.be.false;
+  it("returns false if shift is 0, less than -26 or greater than 25", () => {
+    const message = "Hello World";
 
-    expect(caesar("Hello World", 30)).to.be.false;
+    expect(caesar(message, 0)).to.be.false;
+
+    expect(caesar(message, 30)).to.be.false;
+
+    expect(caesar(message, -30)).to.be.false;
   });
-  it("encodes a message input", () => {
+  it("ignores capital letters", () => {
+    const messge = "A Message";
+    const shift = 5;
+
+    const expected = "f rjxxflj";
+    const actual = caesar(messge, shift);
+
+    expect(actual).to.equal(expected);
+  });
+  it("handles shifts that go past end of alphabet", () => {
+    const message = "Zebra";
+    const shift = 3;
+
+    const expected = "cheud";
+    const actual = caesar(message, shift);
+
+    expect(actual).to.equal(expected);
+  });
+  it("maintains spaces and other nonalphabetical symbols before and after encoding and decoding", () => {
     const message = "hello world!";
     const shift = 5;
+
     const expected = "mjqqt btwqi!";
     const actual = caesar(message, shift);
+
     expect(actual).to.equal(expected);
   });
-  it("decodes a message input if false argument is passed", ()=>{
+  it("decodes a message input if false argument is passed", () => {
     const message = "mjqqt btwqi!";
     const shift = 5;
-    const expected = "hello world!"
-    const actual = caesar(message, shift, false);
-    expect(actual).to.equal(expected);
 
-  })
+    const expected = "hello world!";
+    const actual = caesar(message, shift, false);
+
+    expect(actual).to.equal(expected);
+  });
 });
