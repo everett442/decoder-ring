@@ -45,8 +45,8 @@ const substitutionModule = (function () {
   };
 })();
 
-const message = "ysii.rs";
-const alphabet = ".waeszrdxtfcygvuhbijnokmpl";
-console.log(substitutionModule.substitution(message, alphabet, false));
+// const message = "ysii.rs";
+// const alphabet = ".waeszrdxtfcygvuhbijnokmpl";
+// console.log(substitutionModule.substitution(message, alphabet, false));
 
 module.exports = { substitution: substitutionModule.substitution };

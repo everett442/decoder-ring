@@ -10,7 +10,7 @@ const polybiusModule = (function () {
     // your solution code here
     const polybiusSquare = [
       ["A", "B", "C", "D", "E"],
-      ["F", "G", "H", "I", "J", "K"],
+      ["F", "G", "H", "I/J", "K"],
       ["L", "M", "N", "O", "P"],
       ["Q", "R", "S", "T", "U"],
       ["V", "W", "X", "Y", "Z"],
@@ -88,6 +88,6 @@ const polybiusModule = (function () {
     polybius,
   };
 })();
-console.log(polybiusModule.polybius("424222221351", false));
+// console.log(polybiusModule.polybius("424222221351", false));
 
 module.exports = { polybius: polybiusModule.polybius };
