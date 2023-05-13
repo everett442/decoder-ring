@@ -34,10 +34,10 @@ const caesarModule = (function () {
   };
 })();
 
-var inputString = "Zebra";
-var shiftAmount = 3;
+const inputString = "Zebra";
+const shiftAmount = 3;
 
-var shiftedString = caesarModule.caesar(inputString, shiftAmount);
+let shiftedString = caesarModule.caesar(inputString, shiftAmount);
 console.log(shiftedString);
 
 
